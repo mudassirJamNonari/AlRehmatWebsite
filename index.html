@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      overflow-x: hidden;
+      text-transform: capitalize;
+    }
+
+    header {
+      width: 100%;
+      height: 80px;
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 16px 8px -9px rgba(191, 191, 191, 1);
+    }
+
+    .logo-image img {
+      width: 4.9rem;
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    .nav-links ul {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links ul li a {
+      text-decoration: none;
+      display: block;
+      color: #565656;
+      font-size: 20px;
+      padding: 3px 5px;
+      margin: 0 20px;
+    }
+
+    .nav-links ul li a::after {
+      display: block;
+      content: " ";
+      border-bottom: 2px solid rgb(112, 103, 98 );
+      transform: scaleX(0);
+       margin-top: 15px;
+    }
+
+    .nav-links ul li a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav-links ul li a:active {
+      color: aquamarine;
+    }
+
+    .nav-links .active ul {
+      opacity: 1;
+    }
+
+    .nav-links ul li a {
+      margin-bottom: 12px;
+    }
+
+    @media screen and (max-width: 760px) {
+      .hamburger {
+        display: block;
+        cursor: pointer;
+      }
+
+      .hamburger .line {
+        width: 30px;
+        height: 3px;
+        background-color: #8b8b8b;
+        margin: 6px 0;
+      }
+
+      .nav-links {
+        height: 0;
+        position: absolute;
+        top: 88px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+      color: white;
+        box-shadow: 0 16px 8px -9px rgba(191, 191, 191, 1);
+        transition: height 0.7s;
+        overflow: hidden;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         background-color: rgb(159, 130, 199);
+      }
+
+      .nav-links.active {
+        height: 180px; 
+      }
+
+      .nav-links ul {
+        display: block;
+        width: fit-content;
+        max-width: 80px auto 0 auto;
+        text-align: center;
+        transition: opacity 0.5s;
+        opacity: 0;
+      }
+
+      .nav-links.active ul {
+        opacity: 1;
+      }
+    }
+
+    button {
+      border: none;
+     padding: 10px 20px;
+     border-radius: 12px;
+      margin-right: 20px;
+      color: rgb(239, 234, 234);
+      background-image: linear-gradient(to right, rgb(33, 150, 243), rgb(76, 175, 80));
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+ 
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
+
+  .container h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: rgb(56, 56, 92);
+  }
+
+  .container .it-images img {
+    max-width: 80%;
+    border-radius: 20px;
+    margin-left: 10%;
+
+  }
+
+ 
+  .nav-links ul li a {
+    transition: border-color 0.3s;
+  }
+
+  .nav-links ul li a:hover {
+    border-bottom-color: rgb(33, 150, 243);
+  }
+
+  button {
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  button:hover {
+    background-image: linear-gradient(to right, rgb(76, 175, 80), rgb(33, 150, 243));
+    transform: scale(1.05);
+  }
+.section h1{
+  font-size: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: lowercase;
+    color: rgb(71, 71, 96);
+    margin-top: 100px;
+}
+
+ .coursesHeading {
+    color: var(--blueText);
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.courses {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 6rem;
+    column-gap: 1.2rem;
+
+}
+
+label::selection {
+    background-color: var(--seaGreen);
+}
+
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+.course {
+    background-color: white;
+    max-width: 100%;
+    padding: 1.4rem;
+    border-radius: 1.2rem;
+    font-weight: bold;
+    transition: .6s;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.course a {
+    font-weight: bold;
+    color: var(--seaGreen);
+}
+
+.course:hover {
+
+    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.9);
+}
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 10px;
+  }
+
+  .it-images img {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .courses {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .coursesHeading {
+    font-size: 36px;
+  }
+
+  .course {
+    max-width: 100%;
+  }
+}
+.course {
+  transition: box-shadow 0.4s;
+  background-color: whitesmoke;
+}
+
+.course:hover {
+  box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.9);
+  background-color: thistle;
+}
+
+.aboutHeading,
+.contactHeading,
+.teamHeading {
+    color: var(--blueText);
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+.aboutText {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    line-height: 2.5rem;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.aboutHeading{
+    text-transform: capitalize;
+
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+
+
+}
+
+label {
+    font-weight: bold;
+}
+input{
+    border: 1px solid black;
+    border-radius: 5px;
+}
+input:hover{
+  background-color: thistle;
+  color:  rgb(1, 0, 0);
+}
+textarea:hover{
+  border-color: #8b8b8b;
+
+}
+  aside {
+    margin: 20px;
+  }
+
+  .aboutHeading,
+  .contactHeading,
+  .teamHeading {
+  
+    font-size: 40px;
+  }
+
+  .aboutText {
+    
+    font-size: 1.3rem;
+  }
+
+  label #enter-massage:hover{
+    background-color: thistle;
+  }
+
+  
+
+  @media screen and (max-width: 768px) {
+    .aboutSection {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .aboutText {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+
+    form {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+
+    .aboutHeading,
+    .contactHeading,
+    .teamHeading {
+      font-size: 30px;
+    }
+
+    button.sendMessageButton {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  }
+  .web-teacher{
+    color: var(--blueText);
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .team {
+    padding-right: 3rem;
+    padding-left: 3rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.person {
+    background: linear-gradient(45deg, rgb(9, 4, 4), rgb(48, 32, 32));
+    max-width: 100%;
+    color: white;
+    padding: 9px;
+    border-radius: 1rem;
+}
+
+
+.person img {
+    max-width: 100%;
+}
+
+.person a {
+    color: white;
+    padding-top: 5px;
+    padding: 8px;
+    transition: .6s;
+    height: 4px;
+    width: 4px;
+}
+
+.person a:hover {
+
+    border-radius: 50%;
+}
+.person:hover {
+
+box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.6);
+background: linear-gradient(45deg, rgb(33, 31, 31), rgb(114, 108, 108));
+color: thistle;
+}
+
+
+
+
+  .last-tag {
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+
+  
+  .team {
+    padding: 20px;
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr ));
+    gap: 20px;
+    justify-items:center;
+  }
+
+  .person {
+    background: linear-gradient(45deg, rgb(9, 4, 4), rgb(48, 32, 32));
+    color: white;
+    padding: 20px;
+    border-radius: 1rem;
+    font-weight: bold;
+    transition: box-shadow 0.4s;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+  }
+
+  .person img {
+    max-width: 100%;
+   
+  }
+
+  .person h2,
+  .person h3 {
+    margin: 10px 0;
+  }
+
+  .person a {
+    color: white;
+    padding: 5px;
+    transition: 0.6s;
+  }
+
+  .person:hover {
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.6);
+    color: thistle;
+  }
+
+
+
+  @media screen and (max-width: 768px) {
+    .team {
+      grid-template-columns: 1fr ;
+    }
+  }
+
+  /* FOOTER */
+  .footerLinks {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footerLinks a {
+    text-decoration: none;
+    color: var(--blueText);
+    transition: .6s;
+}
+
+.footerLinks a:hover {
+    color: var(--seaGreen);
+}
+
+.outro {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.outro a {
+    color: var(--blueText);
+    transition: .6s;
+}
+
+
+.outro a:hover {
+    color: var(--seaGreen);
+}
+
+</style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-image">
+      <img src="logo-image.jpg" alt="image here">
+    </div>
+    <div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="#" class="active">home</a></li>
+        <li><a href="#">about us</a></li>
+        <li><a href="#">contact us</a></li>
+        <li><a href="#">courses</a></li>
+        <li><a href="#">feasibilities</a></li>
+        <button>Enroll Now</button>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <h1>Design Your Future with Al Rehmat Institute</h1>
+    <div class="it-images">
+      <img src="courses info.jpg" alt="">
+    </div>
+  </div>
+</section>
+<div id="courses"></div>
+<h1 class="coursesHeading">Courses We Offer!</h1>
+<section class="courses">
+    <div class="course">
+        <img width="50" height="50" src="web.png" alt="web" />
+        <h1>Frontend Development Web Development</h1>
+        <p class="courseDescription">
+            We teach you Frontend Development from Scratch. After this course you will be able to design a
+            responsive website using React JS
+        </p>
+      
+    </div>
+
+
+    <div class="course">
+        <img width="50" height="50" src="web.png" alt="web" />
+        <h1>Graphic Designing</h1>
+        <p class="courseDescription">
+            We teach you Frontend Development from Scratch. After this course you will be able to design a
+            responsive website using React JS
+        </p>
+      
+    </div>
+
+
+    <div class="course">
+        <img width="50" height="50" src="web.png" alt="web" />
+        <h1>Cyber Security</h1>
+        <p class="courseDescription">
+            We teach you Frontend Development from Scratch. After this course you will be able to design a
+            responsive website using React JS
+        </p>
+      
+    </div>
+
+    <div class="course">
+        <img width="50" height="50" src="web.png" alt="web" />
+        <h1>Video Editing</h1>
+        <p class="courseDescription">
+            We teach you Frontend Development from Scratch. After this course you will be able to design a
+            responsive website using React JS
+        </p>
+      
+    </div>
+
+
+    <div class="course">
+        <img width="50" height="50" src="web.png" alt="web" />
+        <h1>Basic IT Skills</h1>
+        <p class="courseDescription">
+            We teach you Frontend Development from Scratch. After this course you will be able to design a
+            responsive website using React JS
+        </p>
+       
+    </div>
+
+
+    <div class="course">
+        <img width="50" height="50" src="web.png" alt="web" />
+        <h1>Social Media Marketin</h1>
+        <p class="courseDescription">
+            We teach you Frontend Development from Scratch. After this course you will be able to design a
+            responsive website using React JS
+        </p>
+       
+    </div>
+</section>
+<aside>
+  <div id="about"></div>
+<section class="aboutSection">
+    <h1 class="aboutHeading">About Us</h1>
+    <div class="about">
+        <div class="aboutText">
+            <p> Welcome to Al Rehmat Institute, a beacon of knowledge and learning in the heart
+                of our community. We take great pride in offering a diverse range of courses designed to equip
+                individuals with the tools they need to succeed in the digital age. Whether you're interested in
+                web
+                development, graphics design, cybersecurity, video editing, social media marketing, or basic IT,
+                we
+                have something to offer everyone. At Al Rehmat Institute, we believe that education should be
+                accessible to all, which is why we offer our courses at a nominal registration fee. In addition
+                to
+                our affordable courses, we are delighted to provide free learning opportunities
+                to further enhance your skills and expertise by providing you 💻 laptops for practice
+        </div>
+        </p>
+    </div>
+    <div class="form">
+        <form action="">
+            <label for="name">Enter Your Name:</label>
+            <input type="text" name="name" id="name">
+            <br>
+            <label for="email">Enter Your Email:</label>
+            <input type="email" name="email" id="email">
+            <br>
+            <label for="email">Enter Your Course name that are you intrested:</label>
+            <input type="email" name="email" id="email">
+            <br>
+            <label for="text ">text massage:</label>
+            <br>
+            <button id=" sendMessageButton" class="sendMessageButton" type="submit" class="enroll" style="outline: none; border: none;">Send Message</button>
+        </form>
+    </div>
+</aside>
+<div class="last-tag">
+    <div id="team"></div>
+    <section class="outTeamSection">
+        <h1 class="teamHeading">Our Team members</h1>
+    
+        <div class="team">
+            <div class="person">
+                <img src=" Saqlain Khadim.png" alt="">
+                <h2>Saqlain Khadim</h2>
+                <h3 style="padding-bottom: 7px;">Full Stack web   Developer</h3>
+                    <a href="https://www.linkedin.com/in/saqlainkhadim/" target="_blank">
+                      <i class='fa fa-lg fa-linkedin'></i>
+                    </a>
+            </div>
+    
+    
+            <div class="person">
+                <img src="simple2-removebg-preview.png" alt="">
+                <h2>waleed khalid</h2>
+                <h3 style="padding-bottom: 7px;">Cyber Security</h3>
+                    <a href="https://www.linkedin.com/in/saqlainkhadim/" target="_blank">
+                      <i class='fa fa-lg fa-linkedin'></i>
+                    </a>
+            </div>
+    
+            
+            <div class="person">
+                <img src="simple-removebg-preview.png" alt="">
+                <h2>muhammad bin usman</h2>
+                <h3 style="padding-bottom: 7px;">Graphic Designer</h3>
+                    <a href="https://www.linkedin.com/in/saqlainkhadim/" target="_blank">
+                      <i class='fa fa-lg fa-linkedin'></i>
+                    </a>
+            </div>
+        </div>
+      </div>
+    
+
+
+      <div class="footerDiv"></div>
+<div class="footer">
+    <div class="footerLinks">
+    <a href="https://www.linkedin.com/company/alrehmat/" target="_blank">
+        <i class='fa fa-lg fa-linkedin'></i>
+      </a>
+
+      <a href="https://web.facebook.com/profile.php?id=100090163881873" target="_blank">
+        <i class='fa fa-lg fa-facebook'></i>
+      </a>
+
+      <a href="https://wa.me/p/4886762711448460/923357123459" target="_blank">
+        <i class='fa fa-lg fa-whatsapp'></i>
+      </a>
+    </div>
+    
+       <div class="outro">
+           <h1>Created by <a href="https://wa.me/03090787530 " target="_blank">MUHAMMAD MUDASSAR</a></h1>
+    </div>
+
+</div>
+</div>
+
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    hamburger.onclick = function () {
+      navLinks.classList.toggle("active");
+    };
+  </script>
+</body>
+
+</html>
